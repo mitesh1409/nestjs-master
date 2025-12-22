@@ -17,6 +17,19 @@ As a result, you can build an application that is:
 - Loosely Coupled
 - Reliable
 
+Topics Covered in this Video:  
+0:00 Create a NestJS app
+2:17 Decorators
+3:12 Modules
+5:19 Controllers
+9:24 Providers
+11:08 Dependency injection
+15:10 Testing
+18:26 Error Handling
+20:05 Pipes
+23:52 Guards
+
+
 ## #1 [[00:00](http://www.youtube.com/watch?v=2gtiffE3__U&t=0)] Create a NestJS App
 
 * **The Nest CLI:**  
