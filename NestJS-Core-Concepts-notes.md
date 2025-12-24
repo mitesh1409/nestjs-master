@@ -31,7 +31,7 @@ and it modifies their behavior
 and it can even add metadata.
 
 Analogy  
-Think of decorators as wearing accessories or suits that gives you extra power.
+Think of decorators as wearing accessories or suits that gives you extra powers.
 
 ## #4 Controllers
 
