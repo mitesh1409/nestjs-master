@@ -18,10 +18,10 @@ As a result, you can build an application that is:
 - Reliable
 
 Topics Covered in this Video:  
-0:00 Create a NestJS app
-2:17 Decorators
-3:12 Modules
-5:19 Controllers
+X 0:00 Create a NestJS app
+X 2:17 Decorators
+X 3:12 Modules
+X 5:19 Controllers
 9:24 Providers
 11:08 Dependency injection
 15:10 Testing
@@ -47,6 +47,8 @@ The `main.ts` file uses `NestFactory` to create the application instance using t
 The Nest CLI can do a lot more than just create projects,  
 like generating modules with CRUD resources, controllers, providers, pipes, guards, test files etc.
 
+---
+
 ## #2 [[02:17](http://www.youtube.com/watch?v=2gtiffE3__U&t=137)] Decorators
 
 * **Definition:**  
@@ -56,35 +58,73 @@ they are functions applied to classes, methods, or parameters to add extra funct
 They are used extensively throughout NestJS to define the role of a class  
 (e.g., `@Module()`, `@Controller()`) or to control the behavior of methods and parameters.
 
+---
+
+## #3 [[03:12](http://www.youtube.com/watch?v=2gtiffE3__U&t=192)] Modules
+
+* **Architecture:**  
+
+NestJS is like a severe parent that knows what is best for you.  
+You just need to obey the framework and things will be fine.  
+
+A strong recommendation is to structure your code in Modules.
+
+NestJS enforces a modular structure.  
+Every app has one **Root Module** (`AppModule`), which forms an "application graph"  
+by importing other modules.  
+
+* **Encapsulation:**  
+Modules encapsulate related capabilities (e.g., an "Episodes Module" or "Topics Module").  
+* **CLI Command:**  
+Generate a module using `nest generate module <name>`.  
+* **Configuration:**  
+The `@Module()` decorator takes a configuration object with properties like `imports`, `controllers`, `providers`, and `exports`.
+
+---
+
+## #4 [[05:19](http://www.youtube.com/watch?v=2gtiffE3__U&t=319)] Controllers
+
+If your app has no controller then your app can't handle any incoming requests.  
+
+A controller is a class decorated with the `@Controller` decorator.
+
+* **Role:**  
+Controllers are the entry points for handling incoming HTTP requests.  
+* **Routing:**  
+Defined using the `@Controller('path')` decorator.  
+Methods within the class handle specific HTTP verbs using decorators like  
+`@Get()`, `@Post()`, `@Put()`, and `@Delete()`.  
+These method decorators accept a string as parameter as well,  
+and that string argument can be a nested root path.  
+* **Request Data:**  
+You can access request details using parameter decorators:  
+  * `@Query()` for URL query parameters.
+  * `@Param()` for URL path parameters (e.g., `:id`).
+  * `@Body()` for the request payload.
+* **Generate Controller:**  
+`nest generate controller <controller-name>`
+
+Basically, you tell NestJS what you want by using decorators and the framework  
+does the heavy lifting for you.
+
+---
+
+## #5 [[09:24](http://www.youtube.com/watch?v=2gtiffE3__U&t=564)] Providers
+
+* **Concept:**  
+Nearly everything in Nest is a provider. These are classes decorated with `@Injectable()`.  
+* **Services:**  
+The most common providers are services, which handle business logic and data manipulation.  
+* **CLI Command:**  
+Generate a service using `nest generate service <name>`.  
+* **Registration:**  
+Providers must be added to the `providers` array in a module to be available for injection.  
+
 
 ---
 
 Gen AI Content
 
-### **[[03:12](http://www.youtube.com/watch?v=2gtiffE3__U&t=192)] Modules**
-
-* **Architecture:** NestJS enforces a modular structure. Every app has one **Root Module** (`AppModule`), which forms an "application graph" by importing other modules [[03:27](http://www.youtube.com/watch?v=2gtiffE3__U&t=207)].
-* **Encapsulation:** Modules encapsulate related capabilities (e.g., an "Episodes Module" or "Topics Module") [[03:43](http://www.youtube.com/watch?v=2gtiffE3__U&t=223)].
-* **CLI Command:** Generate a module using `nest generate module <name>` [[04:06](http://www.youtube.com/watch?v=2gtiffE3__U&t=246)].
-* **Configuration:** The `@Module()` decorator takes a configuration object with properties like `imports`, `controllers`, `providers`, and `exports` [[04:31](http://www.youtube.com/watch?v=2gtiffE3__U&t=271)].
-
-### **[[05:19](http://www.youtube.com/watch?v=2gtiffE3__U&t=319)] Controllers**
-
-* **Role:** Controllers are the entry points for handling incoming HTTP requests [[05:28](http://www.youtube.com/watch?v=2gtiffE3__U&t=328)].
-* **Routing:** Defined using the `@Controller('path')` decorator. Methods within the class handle specific HTTP verbs using decorators like `@Get()`, `@Post()`, `@Put()`, and `@Delete()` [[05:37](http://www.youtube.com/watch?v=2gtiffE3__U&t=337)].
-* **Request Data:** You can access request details using parameter decorators:
-* `@Query()` for URL query parameters [[07:38](http://www.youtube.com/watch?v=2gtiffE3__U&t=458)].
-* `@Param()` for URL path parameters (e.g., `:id`) [[07:54](http://www.youtube.com/watch?v=2gtiffE3__U&t=474)].
-* `@Body()` for the request payload [[07:45](http://www.youtube.com/watch?v=2gtiffE3__U&t=465)].
-
-
-
-### **[[09:24](http://www.youtube.com/watch?v=2gtiffE3__U&t=564)] Providers**
-
-* **Concept:** Nearly everything in Nest is a provider. These are classes decorated with `@Injectable()` [[09:24](http://www.youtube.com/watch?v=2gtiffE3__U&t=564)].
-* **Services:** The most common providers are services, which handle business logic and data manipulation [[09:18](http://www.youtube.com/watch?v=2gtiffE3__U&t=558)].
-* **CLI Command:** Generate a service using `nest generate service <name>` [[09:48](http://www.youtube.com/watch?v=2gtiffE3__U&t=588)].
-* **Registration:** Providers must be added to the `providers` array in a module to be available for injection [[09:56](http://www.youtube.com/watch?v=2gtiffE3__U&t=596)].
 
 ### **[[11:08](http://www.youtube.com/watch?v=2gtiffE3__U&t=668)] Dependency Injection**
 
