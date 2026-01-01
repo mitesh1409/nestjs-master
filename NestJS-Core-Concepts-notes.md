@@ -28,6 +28,11 @@ which are Modules, Controllers, Providers, Middlewares, Guards, Interceptors, Pi
 
 ## #2 Modules
 
+Analogy  
+Think of modules as the departments in a company.  
+Each department has its own responsibilities and functions,  
+but they all work together to achieve the company's goals.
+
 Modules are the building blocks of a NestJS application.
 
 At the top there is a Root Module,  
@@ -38,15 +43,20 @@ that is annotated with `@Module` decorator.
 
 ## #3 Decorators
 
-A decorator is a special kind of function,  
-and it can be attached to methods, classes, properties  
-and it modifies their behavior  
-and it can even add metadata.
-
 Analogy  
 Think of decorators as wearing accessories or suits that gives you extra powers.
 
+A decorator is a special kind of function,  
+and it can be attached to classes, methods, properties etc.  
+and it modifies their behavior  
+and it can even add metadata.
+
 ## #4 Controllers
+
+Analogy  
+Think of controllers as the air traffic controllers at an airport.  
+OR  
+Think of controllers as the receptionist at a hotel.  
 
 Controllers are classes that are annotated with the `@Controller` decorator.
 
@@ -56,7 +66,14 @@ receiving incoming request and returning a response.
 The main role of a controller is to receive requests and return responses.  
 Anything else is delegated to other classes such as providers.
 
+Controllers must be THIN.
+
 ## #5 Providers
+
+Analogy  
+You can think of providers as freelance workers,  
+and NestJS is an agency that places those freelance workers  
+wherever they are needed.
 
 Most of the code that you will be writing in NestJS is within providers.
 
@@ -65,16 +82,11 @@ injected in other classes as dependency.
 
 A provider class is annotated with the `@Injectable` decorator.
 
-Analogy  
-You can think of providers as freelance workers,  
-and NestJS is an agency that places those freelance workers  
-wherever they are needed.
-
 This is how Dependency Injection and Singleton Pattern is used in NestJS.
 
 ## #6 Middlewares
 
-Analogy
+Analogy  
 When you want to travel by plane,  
 you have to go through different stages like check in your luggage, passing the security check etc.  
 
@@ -89,15 +101,15 @@ NestJS comes with built-in features for common request flow management.
 
 ## #7 Guards
 
-Guards are critical part of the request lifecycle in NestJS.
-They determine whether a request will be handled by the route handler or not.
-
-Analogy
+Analogy  
 You can think of guards as security personnel  
-who check if you have the right credentials to enter a building.
-
+who check if you have the right credentials to enter a building.  
+OR  
 You can think of guards as the security personnel at the airport  
 who check if you have the right credentials to board the plane.
+
+Guards are critical part of the request lifecycle in NestJS.
+They determine whether a request will be handled by the route handler or not.
 
 The primary purpose of guards is to determine whether the request will be  
 handled by the route handler or not based on certain conditions such as  
@@ -107,22 +119,42 @@ Guards are implemented by creating classes that implement the `CanActivate` inte
 
 ## #8 Interceptors
 
+Analogy  
+You can think of interceptors as the customs officers at the airport  
+who inspect your luggage before you leave and when you arrive.
+
 After the guards, interceptors come into play in the request lifecycle.
 
 They run before and after the route handler is executed.
 So they give you full control over the request-response cycle.
 
 Interceptors implement the `NestInterceptor` interface.
-They can perform tasks like - logging, caching, transforming the response, etc.
+They can perform tasks like - logging, caching, transforming the request/response, etc.
 
 ## #9 Pipes
+
+Analogy  
+You can think of pipes as quality control inspectors  
+who check the products before they are shipped out to customers.  
+OR  
+You can think of pipes as the security scanners at the airport  
+who check your luggage for prohibited items before you board the plane.
 
 Pipes allow you to transform and validate incoming data before it reaches the route handler.
 
 Pipes are classes that implement the `PipeTransform` interface,  
 they are annotated with the `@Injectable` decorator.
 
+[Built-in pipes](https://docs.nestjs.com/pipes#built-in-pipes)
+
 ## #10 Exception Filters
+
+Analogy  
+You can think of Exception Filters as the customer service representatives  
+who handle complaints and issues raised by customers.  
+OR  
+You can think of Exception Filters as the emergency response team  
+who handle unexpected situations during a flight.
 
 Exception Filters are used to handle exceptions thrown during the request lifecycle.
 You can customize the error handling logic in your application using Exception Filters.
