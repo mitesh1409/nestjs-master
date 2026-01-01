@@ -10,8 +10,21 @@ A progressive Node.js framework for building efficient, reliable and scalable se
 What you can build with NestJS?  
 
 - An HTTP Server Application
+  Using `NestFactory.create()` method.
 - A Microservice Application
+  Using `NestFactory.createMicroservice()` method.
+  Microservices are similar to HTTP server applications.
+  Microservices can communicate with each other using different transport layers like TCP, Redis, NATS, MQTT etc.
+  Microservices are ideal for building distributed systems and event-driven architectures.
+  Microservices can be independently deployed and scaled.
 - A Standalone Application
+  Using `NestFactory.createApplicationContext()` method.
+  Standalone applications are not connected to any network protocols.
+  They are ideal for building CLI tools, background jobs, data processing tasks etc.
+
+All these applications have one thing in common -  
+They are all built using the same building blocks of NestJS,  
+which are Modules, Controllers, Providers, Middlewares, Guards, Interceptors, Pipes and Exception Filters.
 
 ## #2 Modules
 
@@ -31,7 +44,7 @@ and it modifies their behavior
 and it can even add metadata.
 
 Analogy  
-Think of decorators as wearing accessories or suits that gives you extra power.
+Think of decorators as wearing accessories or suits that gives you extra powers.
 
 ## #4 Controllers
 
